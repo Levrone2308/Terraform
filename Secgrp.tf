@@ -8,7 +8,7 @@ resource "aws_security_group" "dove-sg" {
 
 resource "aws_vpc_security_group_ingress_rule" "allow_ssh" {
   security_group_id = aws_security_group.dove-sg.id
-  cidr_ipv4       = ["152.58.130.254/32"] # Replace with your IP address
+  cidr_ipv4       = "152.58.130.254/32" # Replace with your IP address
   ip_protocol          = "tcp"
   from_port         = 22
   to_port           = 22
@@ -17,7 +17,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ssh" {
 
 resource "aws_vpc_security_group_ingress_rule" "allow_http" {
   security_group_id = aws_security_group.dove-sg.id
-  cidr_ipv4       = ["0.0.0.0/0"] # Allow HTTP from anywhere
+  cidr_ipv4       = "0.0.0.0/0" # Allow HTTP from anywhere
   ip_protocol          = "tcp"
   from_port         = 80
   to_port           = 80
