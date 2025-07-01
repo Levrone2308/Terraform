@@ -10,3 +10,8 @@ resource "aws_instance" "web" {
     }
   
 }
+
+resource "aws_ec2_instance_state" "dove_instance_state" {
+    instance_id = aws_instance.web.id
+    state       = "running" # Set the desired state of the instance
+}
