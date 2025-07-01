@@ -30,6 +30,6 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_outbound_ipv4" {
 }
 resource "aws_vpc_security_group_egress_rule" "allow_all_outbound_ipv6" {
   security_group_id = aws_security_group.dove-sg.id
-  cidr_ipv4       = "::/0"  # Allow all outbound IPv6 traffic
+  cidr_ipv6       = "::/0"  # Allow all outbound IPv6 traffic
   ip_protocol = "-1" # -1 means all protocols
 }
